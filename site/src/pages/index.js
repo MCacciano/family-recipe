@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import axios from 'axios';
 
 import Layout from '../components/layout/Layout';
 import SEO from '../components/seo/Seo';
 
 // query newest 3 recipes
 export const pageQuery = graphql`
-  query ThreeNewestRecipes {
+  query HomePageQuery {
+    hero: allPixabayPhoto {
+      edges {
+        node {
+          heroImg {
+            url
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
     recipes: allSanityRecipe(limit: 3, sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
@@ -29,29 +44,14 @@ export const pageQuery = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => {
-  console.log('data', data);
-
+const IndexPage = ({ data: { hero } }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>HOME PAGE</h1>
-      <h2>3 NEWEST RECIPES WILL BE BELOW</h2>
-      <h2>GO TO THE RECIPES PAGE FOR THE FULL LIST OF RECIPES</h2>
-      <ul className="container mx-auto grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols:1 gap-8">
-        {data.recipes.edges.map(({ node }) => {
-          const { _id, name, slug, image } = node;
-
-          return (
-            <li key={_id} className="rounded border-red-600 shadow">
-              <Link className="flex flex-col" key={_id} to={`/recipes/${slug.current}`}>
-                <Img fluid={image.asset.fluid} />
-                <h2 className="py-4 pl-4">{name}</h2>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="overflow-hidden absolute top-0 left-0 w-full h-full">
+        <Img fluid={hero.edges[Math.floor(Math.random() * 20)].node.heroImg.childImageSharp.fluid} />
+        {/* <div className="bg-no-repeat bg-cover h-full w-full" style={{ backgroundImage: `url(${bgImg})` }}></div> */}
+      </div>
     </Layout>
   );
 };

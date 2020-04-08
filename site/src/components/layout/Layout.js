@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <header>
+      <header className="absolute sticky top-0 left-0 z-10">
         <Navigation />
       </header>
       <main className="border-indigo-400">{children}</main>

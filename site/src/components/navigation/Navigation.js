@@ -14,7 +14,7 @@ const Navigation = () => {
   `);
 
   return (
-    <div className="flex bg-gray-900 text-white justify-between items-center px-8 md:px-16 h-24">
+    <div className="flex bg-gray-900 text-white justify-between items-center px-8 md:px-16">
       <h2 className="flex items-center font-extrabold h-full text-2xl">
         <Link to="/">{data.site.siteMetadata.title}</Link>
       </h2>
