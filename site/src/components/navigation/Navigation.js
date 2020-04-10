@@ -14,22 +14,27 @@ const Navigation = () => {
   `);
 
   return (
-    <div className="flex bg-gray-900 text-white justify-between items-center px-8 md:px-16">
+    <div
+      className="flex bg-textBlack text-white justify-between items-center px-8 md:px-16"
+      style={{ height: '64px' }}
+    >
       <h2 className="flex items-center font-extrabold h-full text-2xl">
-        <Link to="/">{data.site.siteMetadata.title}</Link>
+        <Link className="h-full flex items-center" to="/">
+          {data.site.siteMetadata.title}
+        </Link>
       </h2>
       <ul className="flex items-center font-bold h-full text-lg uppercase">
-        <li className="hidden md:flex">
-          <Link className="p-6" to="/">
+        <li className="hidden md:flex h-full">
+          <Link className="px-4 h-full flex items-center" to="/">
             Home
           </Link>
         </li>
-        <li className="hidden md:flex">
-          <Link className="p-6" to="/recipes">
+        <li className="hidden md:flex h-full">
+          <Link className="px-4 h-full flex items-center" to="/recipes">
             Recipes
           </Link>
         </li>
-        <li className="flex md:hidden flex-col justify-between h-6 w-8 cursor-pointer">
+        <li className="flex md:hidden flex-col justify-between w-8 cursor-pointer h-full">
           <span className="h-1 w-full bg-white"></span>
           <span className="h-1 w-full bg-white"></span>
           <span className="h-1 w-full bg-white"></span>

@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div>
+    <div className='font-roboto'>
       <header className="absolute sticky top-0 left-0 z-10">
         <Navigation />
       </header>

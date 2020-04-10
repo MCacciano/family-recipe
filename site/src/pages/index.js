@@ -48,8 +48,12 @@ const IndexPage = ({ data: { hero } }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="overflow-hidden absolute top-0 left-0 w-full h-full">
-        <Img fluid={hero.edges[Math.floor(Math.random() * 20)].node.heroImg.childImageSharp.fluid} />
+      <div className="overflow-hidden absolute left-0 w-full" style={{ height: '80vh', top: '64px' }}>
+        <div className="absolute h-full w-full left-0 bg-black opacity-50 z-10"></div>
+        <Img
+          className="h-full"
+          fluid={hero.edges[Math.floor(Math.random() * 20)].node.heroImg.childImageSharp.fluid}
+        />
         {/* <div className="bg-no-repeat bg-cover h-full w-full" style={{ backgroundImage: `url(${bgImg})` }}></div> */}
       </div>
     </Layout>
