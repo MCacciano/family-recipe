@@ -46,7 +46,7 @@ export default {
             title: 'CMS',
             apiId: '0fa9a49d-44c6-46b8-9aeb-9deaeaade770',
             buildHookId: 'https://api.netlify.com/build_hooks/5e8fd8413fee3236347eb490',
-            name: 'sanity-studio',
+            name: 'cms-family-recipe',
           },
         ],
       },
