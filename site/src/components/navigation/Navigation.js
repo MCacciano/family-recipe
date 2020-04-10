@@ -24,21 +24,16 @@ const Navigation = () => {
         </Link>
       </h2>
       <ul className="flex items-center font-bold h-full text-lg uppercase">
-        <li className="hidden md:flex h-full">
-          <Link className="px-4 h-full flex items-center" to="/">
-            Home
-          </Link>
-        </li>
-        <li className="hidden md:flex h-full">
+        <li className="flex h-full">
           <Link className="px-4 h-full flex items-center" to="/recipes">
             Recipes
           </Link>
         </li>
-        <li className="flex md:hidden flex-col justify-between w-8 cursor-pointer h-full">
+        {/* <li className="flex md:hidden flex-col justify-between w-8 cursor-pointer h-full">
           <span className="h-1 w-full bg-white"></span>
           <span className="h-1 w-full bg-white"></span>
           <span className="h-1 w-full bg-white"></span>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
