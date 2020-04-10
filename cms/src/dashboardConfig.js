@@ -1,7 +1,7 @@
 export default {
   widgets: [
     {
-      name: 'Netlify',
+      name: 'netlify',
       options: {
         title: 'Family Recipe',
         sites: [
