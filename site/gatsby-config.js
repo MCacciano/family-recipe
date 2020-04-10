@@ -48,7 +48,7 @@ module.exports = {
       options: {
         projectId: 'r3imi338',
         dataset: 'production',
-        overlayDrafts: true,
+        overlayDrafts: false,
         watchMode: true,
         // a token with read permissions is required
         // if you have a private dataset
