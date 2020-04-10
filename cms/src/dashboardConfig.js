@@ -39,13 +39,13 @@ export default {
           {
             title: 'Site',
             apiId: 'fa9418d0-6230-4e94-a4f9-7c8c57b5bfa9',
-            buildHookId: 'https://api.netlify.com/build_hooks/5e8d398d44d11449b0e93adf',
+            buildHookId: '5e8d398d44d11449b0e93adf',
             name: 'family-recipe',
           },
           {
             title: 'CMS',
             apiId: '0fa9a49d-44c6-46b8-9aeb-9deaeaade770',
-            buildHookId: 'https://api.netlify.com/build_hooks/5e8fd8413fee3236347eb490',
+            buildHookId: '5e8fd8413fee3236347eb490',
             name: 'cms-family-recipe',
           },
         ],
