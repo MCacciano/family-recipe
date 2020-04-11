@@ -33,7 +33,11 @@
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "./src/dashboardConfig.js"
+      "path": "./src/js/dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./src/css/variableOverrides.css"
     }
   ]
 }
