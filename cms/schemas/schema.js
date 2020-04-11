@@ -5,7 +5,10 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // documents
+import author from './documents/author';
 import recipe from './documents/recipe';
+import category from './documents/category';
+import ingredient from './documents/ingredient';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -13,5 +16,5 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([recipe])
+  types: schemaTypes.concat([recipe, category, ingredient, author]),
 });
