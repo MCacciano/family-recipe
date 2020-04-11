@@ -33,11 +33,15 @@
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "./src/js/dashboardConfig.js"
+      "path": "src/js/dashboardConfig.js"
     },
     {
       "implements": "part:@sanity/base/theme/variables/override-style",
-      "path": "./src/css/variableOverrides.css"
+      "path": "src/css/variableOverrides.css"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "src/components/dashboard/CustomLogo.js"
     }
   ]
 }
