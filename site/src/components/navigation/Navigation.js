@@ -23,7 +23,7 @@ const Navigation = () => {
           {data.site.siteMetadata.title}
         </Link>
       </h2>
-      <ul className="flex items-center font-bold h-full text-lg uppercase">
+      <ul className="flex items-center font-bold h-full text-lg uppercase font-rubik">
         <li className="flex h-full">
           <Link className="px-4 h-full flex items-center" to="/recipes">
             Recipes

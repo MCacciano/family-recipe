@@ -11,7 +11,8 @@ module.exports = {
         white: '#f8f8f8',
       },
       fontFamily: {
-        'roboto': ['Roboto', 'Arial', 'sans-serif'],
+        roboto: ['Roboto', 'Arial', 'sans-serif'],
+        rubik: ['Rubik', 'Roboto', 'Arial', 'sans-serif'],
       },
     },
   },

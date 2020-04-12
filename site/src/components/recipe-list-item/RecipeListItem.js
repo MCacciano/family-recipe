@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 const RecipeListItem = ({ id, image, name, slug }) => {
   return (
     <li className="relative rounded">
-      <Link className="rounded block shadow-2xl" tag="li" key={id} to={`/recipes/${slug.current}`}>
+      <Link className="rounded block shadow-md" tag="li" key={id} to={`/recipes/${slug.current}`}>
         <Img className="rounded" fluid={image.asset.fluid} />
         <div className="absolute top-0 left-0 bg-black opacity-25 w-full h-full"></div>
         <div className="h-full w-full flex flex-column justify-center md:justify-start items-end absolute top-0 left-0 text-white p-4">
