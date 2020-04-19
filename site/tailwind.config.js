@@ -14,6 +14,14 @@ module.exports = {
         roboto: ['Roboto', 'Arial', 'sans-serif'],
         rubik: ['Rubik', 'Roboto', 'Arial', 'sans-serif'],
       },
+      height: {
+        vh50: '50vh',
+        vh90: '90vh',
+        'max-content': 'max-content'
+      },
+      gridTemplateRows: {
+        'header': 'max-content 2fr max-content'
+      }
     },
   },
   variants: {},

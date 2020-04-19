@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/layout/Layout';
 import RecipeInfo from '../components/recipe-info/RecipeInfo';
+import RecipeInfoList from '../components/recipe-info-list/RecipeInfoList';
 
 //   /recipes/:slug
 export const pageQuery = graphql`
@@ -36,44 +37,65 @@ export const pageQuery = graphql`
 const RecipeTemplate = ({ data }) => {
   const { image, name, author, prepTime, cookTime, totalTime, ingredients } = data.recipe;
 
-  const [recipeInfo, setRecipeInfo] = useState([
+  const [recipeInfo] = useState([
     {
-      icon: 'clock',
-      size: 'lg',
+      icon: ['far', 'clock'],
       title: 'Prep',
+      prepTime,
     },
     {
-      icon: 'clock',
-      size: 'lg',
+      icon: ['fas', 'history'],
       title: 'Cook',
+      cookTime,
     },
     {
-      icon: 'clock',
-      size: 'lg',
-      title: 'Total',
-    },
-    {
-      icon: 'clock',
-      size: 'lg',
+      icon: ['fas', 'users'],
       title: 'Servings',
+      servings: '4',
     },
   ]);
 
   return (
     <Layout>
-      <div className="grid grid-cols-1 border border-textBlack font-rubik">
-        <div className="flex justify-center my-4">
-          <h1 className="text-2xl sm:text-5xl font-light border-b-2 border-primary">{name}</h1>
-        </div>
-        <Img fluid={image.asset.fluid} />
-        <ul className="grid grid-cols-2 sm:grid-cols-4 text-white list-none">
-          {recipeInfo.map(({ ...props }) => (
-            <RecipeInfo {...props} />
-          ))}
-        </ul>
+      <div className="grid grid-cols-1 grid-rows-header h-vh90 sm:p-6 sm:mx-auto sm:h-vh50 sm:flex sm:flex-row-reverse md:max-w-screen-lg">
+          <div className="flex justify-center text-center w-full sm:flex-col sm:justify-start">
+            <h1 className="text-2xl sm:text-5xl font-light border-b-2 border-primary m-6">{name}</h1>
+            <div className="hidden sm:flex">
+              <RecipeInfoList recipeInfo={recipeInfo} />
+            </div>
+          </div>
+          <Img fluid={image.asset.fluid} className="object-cover w-full" />
+        <RecipeInfoList isMobile={true} recipeInfo={recipeInfo} />
       </div>
     </Layout>
   );
+
+  // return (
+  //   <Layout>
+  //     <div className="flex flex-col sm:grid sm:grid-cols-2 font-rubik h-vh90 sm:h-vh50">
+  //       <div className="flex justify-center flex-grow-0 mt-4 mb-6 sm:col-start-2 sm:hidden">
+  //         <h1 className="text-2xl sm:text-5xl font-light border-b-2 border-primary">{name}</h1>
+  //       </div>
+  //       <Img fluid={image.asset.fluid} className="object-cover flex-grow sm:row-start-1" />
+  //       <ul className="flex flex-grow-0 sm:hidden">
+  //         {recipeInfo.map(({ ...props }, i) => (
+  //           <RecipeInfo key={i} {...props} />
+  //         ))}
+  //       </ul>
+  //       {/* figure out how to make this a custom layout in tailwind config */}
+  //       <div className="hidden sm:flex sm:flex-col">
+  //         <div className="flex justify-center flex-grow-0 mt-4 mb-6 sm:col-start-2">
+  //           <h1 className="text-2xl sm:text-5xl font-light border-b-2 border-primary">{name}</h1>
+  //         </div>
+  //         <ul className="flex flex-grow-0">
+  //           {recipeInfo.map(({ ...props }, i) => (
+  //             <RecipeInfo key={i} {...props} />
+  //           ))}
+  //         </ul>
+  //       </div>
+  //     </div>
+  //   </Layout>
+  // );
 };
 
 export default RecipeTemplate;
