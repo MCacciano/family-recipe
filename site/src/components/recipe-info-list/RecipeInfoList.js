@@ -2,13 +2,15 @@ import React from 'react';
 
 import RecipeInfo from '../recipe-info/RecipeInfo';
 
-const RecipeInfoList = ({ recipeInfo, isMobile }) => {
+import { StyledRecipeInfo } from './RecipeInfoList.styled';
+
+const RecipeInfoList = ({ recipeInfo }) => {
   return (
-    <ul className={`w-full ${isMobile ? 'flex sm:hidden' : 'hidden sm:flex'}`}>
+    <StyledRecipeInfo>
       {recipeInfo.map(({ ...props }, i) => (
         <RecipeInfo key={i} {...props} />
       ))}
-    </ul>
+    </StyledRecipeInfo>
   );
 };
 

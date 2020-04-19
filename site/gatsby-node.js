@@ -50,7 +50,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-  const RecipePageTemplate = path.resolve('./src/templates/Recipe.js');
+  const RecipePageTemplate = path.resolve('./src/templates/Recipe/Recipe.js');
 
   const res = await graphql(`
     {
